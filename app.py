@@ -10,7 +10,7 @@ import google.generativeai as genai
 app = Flask(__name__,static_url_path='/static')
 
 
-genai.configure(api_key="AIzaSyBqUisIqiRZUv1Km8F-kjK4R4vB2JDC9hc")
+genai.configure(api_key="your api key")
 
 # Set up the model
 generation_config = {
