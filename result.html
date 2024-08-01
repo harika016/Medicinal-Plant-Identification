@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('/static/Background.jpg'); /* Update the path here */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #333; /* Darker text color for better readability */
+        }
+        .box {
+            background-color: #fff; /* White background color for the box */
+            border: 1px solid #ddd; /* Light gray border */
+            padding: 20px; /* Add padding inside the box */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            margin-bottom: 30px; /* Add some margin between sections */
+            max-width: 800px; /* Limit the width of the box */
+        }
+        h1, h2, p {
+            text-align: center;
+            margin: 0; /* Reset margin for headings and paragraphs */
+        }
+        h2 {
+            margin-bottom: 10px; /* Add some margin between section title and content */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Predicted Plant:</h1>
+        <div class="section">
+            <h1>{{ predicted_class }}</h1>
+{% for section, content in generative_response.items() %}
+    <h4>{{ section }}</h4>
+    <ul>
+        {% for item in content %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+            <!--<h2>{{ predicted_class }}</h2>
+            
+                <p>{{generative_response}}</p>-->
+                
+        </div>
+    </div>
+</body>
+</html>
